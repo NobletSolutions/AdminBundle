@@ -3,4 +3,5 @@ VERSION 1  INITIAL GITHUB/PACKAGIST RELEASE
 ===========================================
 
    Version 1.0 - Initial github/packagist release
+      24/06/2020 11:19  1.0.1  Fix composer requirements
       24/06/2020 11:04  1.0.0  initial release
