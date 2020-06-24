@@ -1,0 +1,66 @@
+{% extends '@NSAdmin/base.html.twig' %}
+
+{% block page_header_title %}{{ model|capitalize }}s{% endblock %}
+{% block page_header_subtitle %}{{'admin.header.list'|trans}}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="panel panel-inverse">
+            <div class="panel-heading">
+                <h4 class="panel-title">{% block list_title %}{{'admin.header.manage_entity'|trans({'%entity%':model})}}{% endblock %}</h4>
+            </div>
+            <div class="panel-body">
+                <table class="{% block table_class %}table{% endblock %}">
+                    <thead>
+                    <tr>
+                        {% block list_column_headers %}
+                        <th>_toString</th>
+                        {% endblock %}
+                        {% block actions_header %}
+                        <th></th>
+                        {% endblock %}
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in pagination %}
+                    <tr>
+                        {% block list_row %}
+                        <td>{{ item }}</td>
+                        {% endblock %}
+                        {% block actions %}
+                            <td>
+                                <div class="btn-group">
+                                    {% block edit_button %}
+                                    <a class="btn btn-sm btn-primary" href="{% block edit_url %}{{ path('admin_model_edit', {'_admin_model': model, 'id': item.id}) }}{% endblock %}"><i class="fa fa-pencil"></i> {{'admin.action.edit'|trans}}</a>
+                                    {% endblock %}
+                                    {% block view_button %}
+{#                                        <a class="btn btn-sm btn-success" href="{% block view_url %}{{ path('admin_model_view', {'_admin_model': model, 'id': item.id}) }}{% endblock %}"><i class="fa fa-eye"></i> {{'admin.action.view'|trans}}</a>#}
+                                    {% endblock %}
+                                    {% block delete_button %}
+                                        <a class="btn btn-sm btn-danger ns-confirm" data-confirm-message="Are you sure you want to delete this item?" data-confirm-type="danger"
+                                           href="{% block delete_url %}{{ path('admin_model_delete', {'_admin_model':model, 'id':item.id}) }}{% endblock %}"
+                                        ><i class="fa fa-trash"></i> {{'admin.action.delete'|trans}}</a>
+                                    {% endblock %}
+                                </div>
+                                {% block extra_actions %}
+                                {% endblock %}
+                            </td>
+                        {% endblock %}
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel-footer clearfix">
+                {% block pagination %}
+                {{ knp_pagination_render(pagination, '@ColorAdmin/Pagination/pagination.html.twig', {'_admin_model':model}) }}
+                {% endblock %}
+                {% block create_button %}
+                    <a class="btn btn-warning pull-right" href="{{ path('admin_model_create', {'_admin_model':model}) }}"><i class="fa fa-{% block model_create_icon %}plus{% endblock %}"></i> {{'admin.action.create'|trans}}</a>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

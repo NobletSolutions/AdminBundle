@@ -1,0 +1,23 @@
+admin_model_index:
+    path: /admin_{_admin_model}
+    defaults: { _action: index }
+
+admin_model_list:
+    path: /admin_{_admin_model}/list
+    defaults: { _action: list }
+
+admin_model_view:
+    path: /admin_{_admin_model}/view/{id}
+    defaults: { _action: view }
+
+admin_model_edit:
+    path: /admin_{_admin_model}/edit/{id}
+    defaults: { _action: edit }
+
+admin_model_delete:
+    path: /admin_{_admin_model}/delete/{id}
+    defaults: { _action: delete }
+
+admin_model_create:
+    path: /admin_{_admin_model}/create
+    defaults: { _action: create }

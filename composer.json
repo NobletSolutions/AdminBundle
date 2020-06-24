@@ -1,0 +1,24 @@
+{
+  "name": "ns/admin-bundle",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "homepage": "https://github.com/NobletSolutions/AdminBundle",
+  "authors": [
+    {
+      "name": "Mark Woynarski",
+      "email": "mark.woynarski@nobletdesign.co"
+    }
+  ],
+  "require": {
+    "stof/doctrine-extensions-bundle": "*",
+    "knplabs/knp-paginator-bundle": "*",
+    "ns/color-admin-bundle": "^3.4",
+    "ns/flash-bundle": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "NS\\AdminBundle\\": "src/"
+    }
+  }
+}

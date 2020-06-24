@@ -1,0 +1,17 @@
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    NS\AdminBundle\:
+        resource: '../../*'
+        exclude: '../../{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+
+    NS\AdminBundle\Listener\AdminRouteListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, priority: -10 }
+
+    NS\AdminBundle\Twig\Extension\GlobalsExtension:
+        arguments: ["%ns_admin%"]
+

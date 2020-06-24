@@ -1,0 +1,47 @@
+{% extends '@NSAdmin/base.html.twig' %}
+
+{% form_theme form '@ColorAdmin/Form/fields.html.twig' %}
+
+{% block page_header_title %}{{ model|capitalize }}{% endblock %}
+{% block page_header_subtitle %}{{ 'admin.header.edit'|trans }}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <form method="POST" action="{% block form_action %}{% endblock %}" class="ns-confirm"
+                  data-confirm-message="{{ 'admin.confirm.save'|trans }}"
+                  data-confirm-type="info"
+                  enctype="multipart/form-data"
+            >
+                <div class="panel panel-inverse">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">{% block edit_title %}{{ 'admin.header.edit_entity'|trans({'%entity%':model}) }} {{ object.id and attribute(object, '__toString') is defined ? object : '' }}{% endblock %}</h4>
+                    </div>
+                    <div class="panel-body">
+                        {% block form %}
+                            {{ form_rest(form) }}
+                        {% endblock %}
+                    </div>
+                    <div class="panel-footer">
+                        {% block panel_footer_contents %}
+                            {% block cancel_button %}
+                                <a class="btn btn-warning ns-confirm"
+                                   href="{{ path('admin_model_list', {'_admin_model':model}) }}"
+                                   data-confirm-message="{{ 'admin.confirm.unsaved'|trans }}"
+                                   data-confirm-type="warning"
+                                ><i class="fa fa-undo"></i> {{ 'admin.action.back'|trans }}</a>
+                            {% endblock %}
+                            {% block save_button %}
+                                <button type="submit" class="pull-right btn btn-success"><i class="fa fa-save"
+                                    ></i> {{ 'admin.action.save'|trans }}
+                                </button>
+                            {% endblock %}
+                            {% block buttons_extra %}
+                            {% endblock %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
