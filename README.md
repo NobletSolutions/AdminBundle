@@ -1,5 +1,7 @@
 # AdminBundle
-Simple framework for generating SF4/5 admin
+Simple framework for generating SF4/5 admin.  Allows you to create simple admin pages for managing entities by creating a basic entity, service, repository, and controller class for each entity.
+
+Requires more coding than using an admin generator like Sonata, but allows for much greater flexibility by ditching complex configurators for simple, easily-overridden and extended classes.
 
 ##Installation
 
