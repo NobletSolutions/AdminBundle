@@ -1,6 +1,6 @@
 {
   "name": "ns/admin-bundle",
-  "description": "description",
+  "description": "Simple framework for generating SF4/5 admin pages.",
   "minimum-stability": "stable",
   "license": "proprietary",
   "homepage": "https://github.com/NobletSolutions/AdminBundle",
@@ -13,7 +13,7 @@
   "require": {
     "stof/doctrine-extensions-bundle": "*",
     "knplabs/knp-paginator-bundle": "*",
-    "ns/color-admin-bundle": "^3.4",
+    "ns/color-admin-bundle": "^2.4",
     "ns/flash-bundle": "^2.0"
   },
   "autoload": {
