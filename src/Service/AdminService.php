@@ -131,7 +131,7 @@ abstract class AdminService implements AdminServiceInterface
         $this->entity_manager->persist($entity);
         $this->entity_manager->flush();
 
-        $this->dispatcher->dispatch(new AdminEvent($entity), AdminEvent::CREATE);
+        $this->dispatcher->dispatch(new AdminEvent($entity), AdminEvent::UPDATE);
     }
 
     /**
@@ -142,6 +142,6 @@ abstract class AdminService implements AdminServiceInterface
         $this->entity_manager->persist($entity);
         $this->entity_manager->flush();
 
-        $this->dispatcher->dispatch(new AdminEvent($entity), AdminEvent::UPDATE);
+        $this->dispatcher->dispatch(new AdminEvent($entity), AdminEvent::CREATE);
     }
 }
