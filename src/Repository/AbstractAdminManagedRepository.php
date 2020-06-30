@@ -15,13 +15,13 @@ abstract class AbstractAdminManagedRepository extends ServiceEntityRepository
      *
      * @return \Doctrine\ORM\Query
      */
-    public function getListQuery($order_by = '', $order = false): Query
+    public function getListQuery($order_by = null, $order = false): Query
     {
         $q = $this->createQueryBuilder('e');
 
         if($order_by)
         {
-            $q->orderBy($order_by, $order ?: 'ASC');
+            $q->orderBy('e.'.$order_by, $order ?: 'ASC');
         }
 
         return $q->getQuery();
