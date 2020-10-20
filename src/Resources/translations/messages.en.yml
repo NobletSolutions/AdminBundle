@@ -19,3 +19,12 @@ admin:
         delete: 'Are you sure you want to delete this item?'
         save: 'Are you sure you want to save your changes?'
         unsaved: 'You will lose any unsaved changes.'
+    flash:
+        changes:
+            saved: Your changes have been saved.
+            error: There was an error saving your changes
+        error:
+            no_record: No record provided.
+    auth:
+        page:
+            denied: You are not authorized to access this page.

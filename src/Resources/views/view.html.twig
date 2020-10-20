@@ -27,7 +27,7 @@
                                     {% block delete_button %}
                                         <a class="btn btn-danger ns-confirm" data-confirm-message="{{'admin.confirm.delete'|trans}}" data-confirm-type="danger"
                                            href="{% block delete_url %}{{ path('admin_model_delete', {'_admin_model':model, 'id':object.id}) }}{% endblock %}"
-                                        ><i class="fa fa-trash"></i> {{'admin.action.delete'|trans}}</a>
+                                        ><i class="fa fa-trash"></i> {{'admin.action.delete'|trans}}</a>
                                     {% endblock %}
                                 </div>
                                 {% block extra_actions %}

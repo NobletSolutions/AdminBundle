@@ -10,8 +10,6 @@
             <div class="panel-heading">
                 <h4 class="panel-title">{% block list_title %}{{'admin.header.manage_entity'|trans({'%entity%':model})}}{% endblock %}</h4>
             </div>
-            {% block filter_content %}
-            {% endblock %}
             <div class="panel-body">
                 <table class="{% block table_class %}table{% endblock %}">
                     <thead>
@@ -40,7 +38,7 @@
 {#                                        <a class="btn btn-sm btn-success" href="{% block view_url %}{{ path('admin_model_view', {'_admin_model': model, 'id': item.id}) }}{% endblock %}"><i class="fa fa-eye"></i> {{'admin.action.view'|trans}}</a>#}
                                     {% endblock %}
                                     {% block delete_button %}
-                                        <a class="btn btn-sm btn-danger ns-confirm" data-confirm-message="Are you sure you want to delete this item?" data-confirm-type="danger"
+                                        <a class="btn btn-sm btn-danger ns-confirm" data-confirm-message="{{ 'admin.confirm.delete'|trans }}" data-confirm-type="danger"
                                            href="{% block delete_url %}{{ path('admin_model_delete', {'_admin_model':model, 'id':item.id}) }}{% endblock %}"
                                         ><i class="fa fa-trash"></i> {{'admin.action.delete'|trans}}</a>
                                     {% endblock %}
@@ -59,7 +57,7 @@
                 {{ knp_pagination_render(pagination, '@ColorAdmin/Pagination/pagination.html.twig', {'_admin_model':model}) }}
                 {% endblock %}
                 {% block create_button %}
-                    <a class="btn btn-warning pull-right" href="{{ path('admin_model_create', {'_admin_model':model}) }}"><i class="fa fa-{% block model_create_icon %}plus{% endblock %}"></i> {{'admin.action.create'|trans}}</a>
+                    <a class="btn btn-warning pull-right" href="{{ path('admin_model_create', {'_admin_model':model}) }}"><i class="fa fa-{% block model_create_icon %}plus{% endblock %}"></i> {{'admin.action.create'|trans}}</a>
                 {% endblock %}
             </div>
         </div>

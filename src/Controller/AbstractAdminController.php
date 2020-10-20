@@ -287,7 +287,7 @@ abstract class AbstractAdminController extends AbstractController implements Adm
                 try
                 {
                     $this->edit($form->getData());
-                    $this->flash->addSuccess(null, 'Your changes have been saved.');
+                    $this->flash->addSuccess(null, 'flash.changes.saved');
                     return $this->getEditSuccessRedirect($object->getId());
                 }
                 catch(AdminActionFailedException $e)
@@ -297,7 +297,7 @@ abstract class AbstractAdminController extends AbstractController implements Adm
             }
             else
             {
-                $this->flash->addError(null, 'There was an error saving your changes');
+                $this->flash->addError(null, 'flash.changes.error');
             }
         }
 
@@ -324,7 +324,7 @@ abstract class AbstractAdminController extends AbstractController implements Adm
     {
         if(!$this->isAllowed('create'))
         {
-            throw new AccessDeniedException('You are not authorized to access this page.');
+            throw new AccessDeniedException('admin.auth.page.denied');
         }
 
         $object = $this->getNewEntity();
@@ -350,7 +350,7 @@ abstract class AbstractAdminController extends AbstractController implements Adm
             }
             else
             {
-                $this->flash->addError(null, 'There was an error saving your changes');
+                $this->flash->addError(null, 'admin.flash.change.error');
             }
         }
 
