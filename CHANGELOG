@@ -3,6 +3,7 @@ VERSION 1  INITIAL GITHUB/PACKAGIST RELEASE
 ===========================================
 
    Version 1.0 - Initial github/packagist release
+      21/10/2020 11:10  1.0.6  Fixed flash strings
       20/10/2020 14:31  1.0.5  Added missing translation strings
       30/06/2020 15:55  1.0.4  Query change
       30/06/2020 12:52  1.0.3  Improvements to repository
