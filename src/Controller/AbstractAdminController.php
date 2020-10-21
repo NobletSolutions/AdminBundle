@@ -287,7 +287,7 @@ abstract class AbstractAdminController extends AbstractController implements Adm
                 try
                 {
                     $this->edit($form->getData());
-                    $this->flash->addSuccess(null, 'flash.changes.saved');
+                    $this->flash->addSuccess(null, 'admin.flash.changes.saved');
                     return $this->getEditSuccessRedirect($object->getId());
                 }
                 catch(AdminActionFailedException $e)
@@ -297,7 +297,7 @@ abstract class AbstractAdminController extends AbstractController implements Adm
             }
             else
             {
-                $this->flash->addError(null, 'flash.changes.error');
+                $this->flash->addError(null, 'admin.flash.changes.error');
             }
         }
 
