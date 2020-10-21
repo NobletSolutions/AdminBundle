@@ -2,6 +2,9 @@
 VERSION 1  INITIAL GITHUB/PACKAGIST RELEASE
 ===========================================
 
+   Version 1.1 - Service now returns entity
+      21/10/2020 14:24  1.1.0  initial release
+
    Version 1.0 - Initial github/packagist release
       21/10/2020 11:10  1.0.6  Fixed flash strings
       20/10/2020 14:31  1.0.5  Added missing translation strings
