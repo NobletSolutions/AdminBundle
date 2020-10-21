@@ -44,10 +44,10 @@ interface AdminServiceInterface
     /**
      * @param BaseAdminEntity $entity
      */
-     public function edit(BaseAdminEntity $entity): void;
+     public function edit(BaseAdminEntity $entity): BaseAdminEntity;
 
     /**
      * @param BaseAdminEntity $entity
      */
-     public function create(BaseAdminEntity $entity): void;
+     public function create(BaseAdminEntity $entity): BaseAdminEntity;
 }

@@ -92,17 +92,17 @@ abstract class AdminService implements AdminServiceInterface
     /**
      * @param BaseAdminEntity $entity
      */
-    public function edit(BaseAdminEntity $entity): void
+    public function edit(BaseAdminEntity $entity): BaseAdminEntity
     {
-        $this->_edit($entity);
+        return $this->_edit($entity);
     }
 
     /**
      * @param BaseAdminEntity $entity
      */
-    public function create(BaseAdminEntity $entity): void
+    public function create(BaseAdminEntity $entity): BaseAdminEntity
     {
-        $this->_create($entity);
+        return $this->_create($entity);
     }
 
     protected function _delete(int $id): void
@@ -126,22 +126,26 @@ abstract class AdminService implements AdminServiceInterface
     /**
      * @param BaseAdminEntity $entity
      */
-    protected function _edit(BaseAdminEntity $entity): void
+    protected function _edit(BaseAdminEntity $entity): BaseAdminEntity
     {
         $this->entity_manager->persist($entity);
         $this->entity_manager->flush();
 
         $this->dispatcher->dispatch(new AdminEvent($entity), AdminEvent::UPDATE);
+
+        return $entity;
     }
 
     /**
      * @param BaseAdminEntity $entity
      */
-    protected function _create(BaseAdminEntity $entity): void
+    protected function _create(BaseAdminEntity $entity): BaseAdminEntity
     {
         $this->entity_manager->persist($entity);
         $this->entity_manager->flush();
 
         $this->dispatcher->dispatch(new AdminEvent($entity), AdminEvent::CREATE);
+
+        return $entity;
     }
 }
