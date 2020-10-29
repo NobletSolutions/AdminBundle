@@ -17,14 +17,14 @@ class BaseAdminEntity
      * @ORM\Id
      * @ORM\Column(type="bigint")
      * @ORM\GeneratedValue(strategy="AUTO")
-     * @var int
+     * @var int|null
      */
     protected $id;
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
