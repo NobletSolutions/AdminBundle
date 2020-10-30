@@ -3,6 +3,7 @@ VERSION 1  INITIAL GITHUB/PACKAGIST RELEASE
 ===========================================
 
    Version 1.1 - Service now returns entity
+      30/10/2020 11:52  1.1.2  CSS tweaks
       29/10/2020 15:51  1.1.1  Fix nullable id error
       21/10/2020 14:24  1.1.0  initial release
 
