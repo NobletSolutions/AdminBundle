@@ -1,6 +1,6 @@
 {% extends '@NSAdmin/base.html.twig' %}
 
-{% block page_header_title %}{{ model|capitalize }}s{% endblock %}
+{% block page_header_title %}{{ model|trans|capitalize }}s{% endblock %}
 {% block page_header_subtitle %}{{'admin.header.list'|trans}}{% endblock %}
 
 {% block content %}

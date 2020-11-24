@@ -2,7 +2,7 @@
 
 {% form_theme form '@ColorAdmin/Form/fields.html.twig' %}
 
-{% block page_header_title %}{{ model|capitalize }}{% endblock %}
+{% block page_header_title %}{{ model|trans|capitalize }}{% endblock %}
 {% block page_header_subtitle %}{{ 'admin.header.edit'|trans }}{% endblock %}
 
 {% block content %}
