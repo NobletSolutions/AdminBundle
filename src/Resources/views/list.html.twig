@@ -8,7 +8,7 @@
     <div class="col-12">
         <div class="panel panel-inverse">
             <div class="panel-heading">
-                <h4 class="panel-title">{% block list_title %}{{'admin.header.manage_entity'|trans({'%entity%':model})}}{% endblock %}</h4>
+                <h4 class="panel-title">{% block list_title %}{{'admin.header.manage_entity'|trans({'%entity%':model|trans})}}{% endblock %}</h4>
             </div>
             <div class="panel-body">
                 <table class="{% block table_class %}table{% endblock %}">

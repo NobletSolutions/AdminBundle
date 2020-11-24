@@ -15,7 +15,7 @@
             >
                 <div class="panel panel-inverse">
                     <div class="panel-heading">
-                        <h4 class="panel-title">{% block edit_title %}{{ 'admin.header.edit_entity'|trans({'%entity%':model}) }} {{ object.id and attribute(object, '__toString') is defined ? object : '' }}{% endblock %}</h4>
+                        <h4 class="panel-title">{% block edit_title %}{{ 'admin.header.edit_entity'|trans({'%entity%':model|trans}) }} {{ object.id and attribute(object, '__toString') is defined ? object : '' }}{% endblock %}</h4>
                     </div>
                     <div class="panel-body">
                         {% block form %}
